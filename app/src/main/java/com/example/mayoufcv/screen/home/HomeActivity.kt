@@ -1,9 +1,10 @@
-package com.example.mayoufcv
+package com.example.mayoufcv.screen.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mayoufcv.R
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
