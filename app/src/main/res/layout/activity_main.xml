@@ -3,7 +3,7 @@
 
     <data>
         <import type="android.view.View"/>
-        <variable name="progressObservable" type="androidx.databinding.ObservableBoolean"/>
+        <variable name="progressVisibility" type="androidx.databinding.ObservableBoolean"/>
     </data>
 
     <FrameLayout
@@ -22,7 +22,10 @@
         <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="@{progressObservable ? View.VISIBLE : View.GONE"/>
+                android:visibility="@{progressVisibility ? View.VISIBLE : View.GONE }"
+                android:layout_gravity="center"
+                tools:visibility="visible"
+        />
 
     </FrameLayout>
 
