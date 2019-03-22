@@ -11,6 +11,7 @@ import com.example.mayoufcv.database.StringListConverter
 data class Project(@PrimaryKey(autoGenerate = true) val id: Int? = null,
                     val company: String = "",
                    val duration: String = "",
+                   val projectId: Int = 0,
                    val roleDescription: String = "",
                    val techStack: List<String> = emptyList(),
                    val companyLogo: String = "")
