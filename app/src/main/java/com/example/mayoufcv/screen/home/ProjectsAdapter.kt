@@ -12,7 +12,7 @@ class ProjectsAdapter : RecyclerView.Adapter<ProjectsAdapter.ProjectViewHolder>(
 
     fun setData(data: List<Project>) {
         projects.clear()
-        projects.addAll(projects)
+        projects.addAll(data)
         notifyDataSetChanged()
     }
 

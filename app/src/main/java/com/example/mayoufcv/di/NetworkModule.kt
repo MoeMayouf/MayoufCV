@@ -1,5 +1,6 @@
 package com.example.mayoufcv.di
 
+import android.app.Application
 import android.content.Context
 import com.example.mayoufcv.common.API_TIMEOUT_SECONDS
 import com.example.mayoufcv.common.BASE_URL
@@ -23,7 +24,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCache(context: Context) = Cache(context.cacheDir, CACHE_SIZE)
+    fun provideCache(application: Application) = Cache(application.cacheDir, CACHE_SIZE)
 
     @Provides
     @Singleton
