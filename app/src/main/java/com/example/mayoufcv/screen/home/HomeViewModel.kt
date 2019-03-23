@@ -19,8 +19,8 @@ class HomeViewModel(private val repository: DataSource) : ViewModel() {
 
     fun getProgressObservable() = progressObservable
 
-    fun getResults() {
-        compositeDisposable.add(repository.getAllProjects()
+    fun getResults(isAscending: Boolean = false) {
+        compositeDisposable.add(repository.getAllProjects(isAscending)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { progressObservable.set(true) }

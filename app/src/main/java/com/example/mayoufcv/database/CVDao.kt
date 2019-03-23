@@ -12,6 +12,9 @@ interface CVDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)
     fun addProject(project: Project)
 
-    @Query("SELECT * FROM projects")
-    fun getAllProjects(): Maybe<List<Project>>
+    @Query("SELECT * FROM projects ORDER BY projectId")
+    fun getAllProjectsAscending(): Maybe<List<Project>>
+
+    @Query("SELECT * FROM projects ORDER BY projectId DESC")
+    fun getAllProjectsDescending(): Maybe<List<Project>>
 }

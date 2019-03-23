@@ -7,9 +7,10 @@ class CVRepository(
     private val localDataSource: DataSource,
     private val remoteDataSource: DataSource) : DataSource {
 
-    override fun getAllProjects() = remoteDataSource.getAllProjects()
+    override fun getAllProjects(isAscending: Boolean) = remoteDataSource.getAllProjects(isAscending)
         .doOnSuccess { it.forEach(this::addProject) }
-        .onErrorResumeNext { _: Throwable -> localDataSource.getAllProjects() }
+        .onErrorResumeNext { _: Throwable -> localDataSource.getAllProjects(isAscending) }
+
 
     override fun addProject(project: Project) {
         localDataSource.addProject(project)
