@@ -29,5 +29,6 @@ class TechStackView @JvmOverloads constructor(context: Context, attrs: Attribute
 
 @BindingAdapter("dataset")
 fun setDataset(techStackView: TechStackView, data: List<String>) {
+    techStackView.removeAllViews()
     techStackView.populateViews(data)
 }

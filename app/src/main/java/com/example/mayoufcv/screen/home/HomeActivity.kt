@@ -25,7 +25,8 @@ class HomeActivity : AppCompatActivity() {
         rvProjects.layoutManager = LinearLayoutManager(this)
         rvProjects.adapter = projectsAdapter
 
-        activityMainBinding.progressVisibility = homeViewModel.getProgressObservable()
+        activityMainBinding.viewModel = homeViewModel
+
         homeViewModel.getResultsObservable().observe(this, Observer { projectsAdapter.setData(it) })
         homeViewModel.getResults()
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <import type="android.view.View"/>
-        <variable name="progressVisibility" type="androidx.databinding.ObservableBoolean"/>
+        <variable name="viewModel" type="com.example.mayoufcv.screen.home.HomeViewModel" />
     </data>
 
     <FrameLayout
@@ -22,10 +22,35 @@
         <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="@{progressVisibility ? View.VISIBLE : View.GONE }"
+                android:visibility="@{viewModel.progressObservable ? View.VISIBLE : View.GONE }"
                 android:layout_gravity="center"
                 tools:visibility="visible"
         />
+
+        <com.github.clans.fab.FloatingActionMenu
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:menu_icon="@drawable/ic_sort_24dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="10dp">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_upward_24dp"
+                android:onClick="@{()->viewModel.getResults(true)}"
+                app:fab_label="@string/sort_ascending"
+                />
+
+            <com.github.clans.fab.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_downward_24dp"
+                    android:onClick="@{()->viewModel.getResults(false)}"
+                    app:fab_label="@string/sort_descending"
+            />
+
+        </com.github.clans.fab.FloatingActionMenu>
 
     </FrameLayout>
 

@@ -6,7 +6,7 @@ import io.reactivex.Maybe
 class RemoteDataSource(private val cvService: CVService) : DataSource {
 
     override fun getAllProjects(isAscending: Boolean) = cvService.getCV()
-        .map { projects -> projects.apply { if(isAscending) sortedBy { it.projectId }
+        .map { projects -> projects.run { if(isAscending) sortedBy { it.projectId }
                 else sortedByDescending { it.projectId } } }
         .flatMapMaybe { Maybe.just(it) }
 

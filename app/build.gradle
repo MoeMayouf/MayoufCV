@@ -69,6 +69,10 @@ dependencies {
     //FlexBox
     implementation 'com.google.android:flexbox:1.1.0'
 
+    //FAB
+    implementation 'com.github.clans:fab:1.6.4'
+
+
     testImplementation 'junit:junit:4.12'
     testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
     testImplementation "androidx.room:room-testing:$room_version"
