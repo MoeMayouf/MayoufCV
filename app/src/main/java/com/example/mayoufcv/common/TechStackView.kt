@@ -2,6 +2,7 @@ package com.example.mayoufcv.common
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.mayoufcv.R
@@ -16,6 +17,7 @@ class TechStackView @JvmOverloads constructor(context: Context, attrs: Attribute
         data.forEach {
             val button = MaterialButton(context)
             button.text = it
+            button.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.resources.getDimension(R.dimen.tech_stack_text_size))
             val layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
             layoutParams.setMargins(context.resources.getDimensionPixelSize(R.dimen.tech_stack_margin_horizontal),
                 layoutParams.topMargin,

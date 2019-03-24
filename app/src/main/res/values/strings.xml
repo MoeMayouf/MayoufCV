@@ -3,4 +3,5 @@
 
     <string name="sort_ascending">Sort by Latest</string>
     <string name="sort_descending">Sort by Earliest</string>
+    <string name="logo_content_description">An image representing the logo of a company</string>
 </resources>

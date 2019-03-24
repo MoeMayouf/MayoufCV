@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="project" type="com.example.mayoufcv.data.Project" />
     </data>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                   xmlns:tools="http://schemas.android.com/tools"
-                                   app:cardUseCompatPadding="true"
-                                   android:layout_width="match_parent"
-                                   android:layout_height="wrap_content">
+<androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         <TextView
-                android:text="@{project.company}"
-                tools:text="Company Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvProjectName"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="36dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="28dp"/>
+            android:id="@+id/tvProjectName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{project.company}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Company Name" />
+
         <TextView
-                android:text="@{project.roleDescription}"
-                tools:text="Role Description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvProjectDescription"
-                android:layout_marginTop="12dp"
-                app:layout_constraintTop_toBottomOf="@+id/tvProjectName"
-                app:layout_constraintStart_toStartOf="@+id/tvProjectName"/>
+            android:id="@+id/tvProjectDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{project.roleDescription}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/tvDuration"
+            tools:text="Role Description" />
 
         <com.example.mayoufcv.common.TechStackView
                 android:layout_width="match_parent"
@@ -43,7 +51,36 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/tvProjectDescription"/>
+                android:layout_marginStart="8dp"
+                 android:paddingBottom="14dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvProjectDescription" android:id="@+id/techStackView2"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/logo_content_description"
+            app:imageUrl="@{project.companyLogo}"
+            app:layout_constraintBottom_toTopOf="@+id/techStackView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvProjectName"
+            tools:srcCompat="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{project.duration}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/tvProjectName"
+            tools:text="Duration" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
