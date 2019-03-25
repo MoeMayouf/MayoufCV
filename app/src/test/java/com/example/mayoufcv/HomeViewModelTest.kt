@@ -24,7 +24,8 @@ class HomeViewModelTest : BaseTest() {
 
     private val observer: Observer<List<Project>> = mock()
 
-    private val projects = listOf(Project())
+    private val projects = getDummyProjects()
+
 
     private lateinit var homeViewModel: HomeViewModel
 

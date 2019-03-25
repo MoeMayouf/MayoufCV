@@ -1,5 +1,6 @@
 package com.example.mayoufcv
 
+import com.example.mayoufcv.data.Project
 import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.disposables.Disposable
@@ -29,4 +30,10 @@ open class BaseTest {
         RxAndroidPlugins.setInitMainThreadSchedulerHandler { scheduler }
     }
 
+    fun getDummyProjects(): List<Project> {
+        return listOf(Project(projectId = 1),
+                        Project(projectId = 2),
+                        Project(projectId = 3),
+                        Project(projectId = 4))
+    }
 }
