@@ -1,0 +1,12 @@
+Suggested Improvements:
+Change colors of tech stack objects using Palette or some random genarator
+More unit tests and instrumented tests
+Animations
+More sortable fields
+
+App Overview:
+The app retrieves JSON data representative of a CV and displays it as a list of projects demonstrating
+the candidate's experience and exposure to technology. The tech stack uses custom view based on FlexBox
+and material buttons. The data is cached in local database using Room and is used as a fallback in case of any API error
+The data is fake for now but can be seamlessly upgraded to real data.
+
