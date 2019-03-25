@@ -17,4 +17,7 @@ interface CVDao {
 
     @Query("SELECT * FROM projects ORDER BY projectId DESC")
     fun getAllProjectsDescending(): Maybe<List<Project>>
+
+    @Query("DELETE FROM projects")
+    fun deleteAllProjects()
 }
