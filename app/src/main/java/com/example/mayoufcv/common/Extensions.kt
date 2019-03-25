@@ -1,14 +1,12 @@
 package com.example.mayoufcv.common
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
-import androidx.recyclerview.widget.RecyclerView
+import androidx.annotation.NonNull
 
 /**
  * An extension function to retrieve an instance of LayoutInflater
  *
  */
-fun ViewGroup.getLayoutInflater() = LayoutInflater.from(context)
+@NonNull
+fun ViewGroup.getLayoutInflater() = context?.let { LayoutInflater.from(it) }

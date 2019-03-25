@@ -3,6 +3,7 @@ package com.example.mayoufcv.database
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import org.jetbrains.annotations.Nullable
 
 class StringListConverter {
     private val gson: Gson by lazy {
@@ -19,5 +20,6 @@ class StringListConverter {
     }
 
     @TypeConverter
+    @Nullable
     fun serialiseListOfStrings(data: List<String>) = gson.toJson(data)
 }

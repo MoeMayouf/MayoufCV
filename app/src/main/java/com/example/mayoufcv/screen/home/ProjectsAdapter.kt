@@ -23,8 +23,8 @@ class ProjectsAdapter : RecyclerView.Adapter<ProjectsAdapter.ProjectViewHolder>(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ProjectViewHolder(ItemProjectBinding.inflate(parent.getLayoutInflater(), parent, false))
-
+        parent.getLayoutInflater()?.let { ProjectViewHolder(ItemProjectBinding.inflate(it, parent, false)) }
+            ?: throw IllegalStateException("View state is null")
 
     class ProjectViewHolder(private val itemProjectBinding: ItemProjectBinding) :
         RecyclerView.ViewHolder(itemProjectBinding.root) {

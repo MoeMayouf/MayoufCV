@@ -3,11 +3,9 @@ package com.example.mayoufcv.common
 import android.content.Context
 import android.util.AttributeSet
 import android.util.TypedValue
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.mayoufcv.R
 import com.google.android.flexbox.FlexboxLayout
-import com.google.android.flexbox.FlexboxLayout.*
 import com.google.android.material.button.MaterialButton
 
 class TechStackView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttribute: Int = 0)

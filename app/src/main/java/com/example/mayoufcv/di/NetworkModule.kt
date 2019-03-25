@@ -1,7 +1,6 @@
 package com.example.mayoufcv.di
 
 import android.app.Application
-import android.content.Context
 import com.example.mayoufcv.common.API_TIMEOUT_SECONDS
 import com.example.mayoufcv.common.BASE_URL
 import com.example.mayoufcv.common.CACHE_SIZE
@@ -13,6 +12,7 @@ import dagger.Provides
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.jetbrains.annotations.NotNull
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -54,6 +54,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
+    @NotNull
     fun provideCVService(retrofit: Retrofit) = retrofit.create(CVService::class.java)
 
     @Provides
